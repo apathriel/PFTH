@@ -16,7 +16,7 @@
 
 <p> The class diagram is depicted below: </p>
 
-<img src="https://lh3.googleusercontent.com/AWvCWnczvgusb3nO64POvBNzZsTHYJFqYIqnjSIp5hW2NFX-DgUGW1kXuven600bXWvltxOIJdx2Yh7iq-eXKKQUt4BroAbdINVB1lPk0ON-ynSRANMXCFyGU_cNYbenA0y7cvQbpBaH0UltAQQBgcyvsWOShA7oaci6ipGHOer5K8JWYmpM-S06d9rAoKfReJU7do5i6Pu07FVPEJbUBtlL3ag41NcRjeKBI1K81EIFM1pu9suFRX1_qLDDlOnsUjszS7ubL63gQMx0JA4pNJj2LdywIctFz0JKgiQCbcwlIm7w5T4yjamZeg511DauW6wKXPZ8CwYP4a9cFk8Pp-Vm0r5UK1WKeMlunIJkRHc7HMCC2fgHHWEDZAyM6hPiMLx_U7Zs521E1X8ft442gP7t7fHD9IP7nV49o0pkn5ASWIxo39JqdmMcX5lk4CfljbYL8ro7_vVHcwahHGhjrgAFsJqgjxkdz5WNpucX2nqqyxYS_5JcClQQLhjRcD352aQE0z9f7IXaWDX_t5LwrXsg3g08KoC_z4gGWs_VudYIRJNQJ4IwrYpRPHm02hYF0FEWij1HCYxgy_1dSwE5cBR6tNAWsgqPf792qvChYCr53fHegK0DIrJQovmdwojMr8m4R5bAZJdEFLPrEsyCNgtV3Mfy3pYs-noIA0Ku235FyF8kDfqkpTswe0yq-UQ0FBGDfzLwXATZ82xV8Ie3ORMvQuiY5StWuivrMgBF574rt73BRJNE4GYfB0YcKfmm88Md5JhLkR86buIHZp69M8k564ptPyg3JALSybZtR04ITXiiqprgMTs6RW1rL1fgmwQb-BRfYF-5i3qBsflSg1P2xf2k-3pF7iUQ-hkUuinq7Bs4ro5hGtmhPV5D3iht0xaHHc-unGp-wdGvU1V6YhCdz7jGNrhW_l72ZD1D6gaAujHUBwTomtOppJTGfX0GtHMw7TOFA57y8TKFKplvV74qGuQGuINY5Hgk7ZXTgpoDYbRbjhzz6Q=w705-h880-no?authuser=0" alt="Class Diagram depicting the results of our OOA and OOD" style = "border: solid 3px black">
+<img src="ASSIGNMENT3_CLASS_DIAGRAM.png" alt="Class Diagram depicting the results of our OOA and OOD" style = "border: solid 3px black">
 
 ## Problem 2 - Object-Oriented Programming
 In order to transition from OOD to OOP, we started implementing our classes in Python. Below i have included an example of the Student class that we diagrammed earlier:
@@ -76,13 +76,13 @@ Here, we use the super() function to create the inheritance relationship we high
 
 We continously ran the script interactively, so we were able to debug and iterate our implementation. We  attempted  to facilitate communication between objects: An example would be the takeExam method. This method requires a Course object instance to be passed as the keyword argument.  In hindsight, we should've checked the type of the argument, to ensure the functionality of the method. We struggled with instantiating  the attributes  with  object instances, since we aimed to instantiate the Student  object instances first in our entry point function, we could conceptualize a setter() method, which would modify the attributes after all object instances had been instantiated. 
 
-Please refer to the class.py file I've uploaded to this github repo to view the code in detail. 
+Please refer to the [class.py](class.py) file I've uploaded to this github repo to view the code in detail. 
 
 ##  Problem 3 -  Instantiate Class using an Entry Point Function
 
 In our entry point function, we started by creating instantiations of our object classes. Then, we aimed to exhibit the functionality of our objects by calling all our methods in appropriate order, and visualizing this by using the print() function. We imported the time module,  in order to create a gradual flow in the representation. 
 
-Please refer to the class.py file to view the code in detail, I've included a snippet of the entry point function and the terminal output below:
+Please refer to the [class.py](class.py) file to view the code in detail, I've included a snippet of the entry point function and the terminal output below:
 
 ````py
 educationInstance = Education(
