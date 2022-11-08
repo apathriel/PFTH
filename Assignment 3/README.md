@@ -16,7 +16,9 @@
 
 <p> The class diagram is depicted below: </p>
 
-<img src="ASSIGNMENT3_CLASS_DIAGRAM.png" alt="Class Diagram depicting the results of our OOA and OOD" style = "border: solid 3px black">
+<p align="center">
+	<img src="ASSIGNMENT3_CLASS_DIAGRAM.png" alt="Class Diagram depicting the results of our OOA and OOD" width=500px>
+</p>
 
 ## Problem 2 - Object-Oriented Programming
 In order to transition from OOD to OOP, we started implementing our classes in Python. Below i have included an example of the Student class that we diagrammed earlier:
