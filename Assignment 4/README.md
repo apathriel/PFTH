@@ -73,7 +73,7 @@ createPlottingFunction(series='series-01', format='csv', fileName='clinicalTrial
 colorMap='bone', title='Effects of anti-inflammatory medicine', xLabel='Patients', yLabel='Time'
 ````
 <p align="center">
-	<img src="\figures\clinicalTrialDataset.png" alt="Heatmap depicting effects of anti-inflammatory medicine over time" width=500px>
+	<img src="./figures/clinicalTrialDataset.png" alt="Heatmap depicting effects of anti-inflammatory medicine over time">
 </p>
 
 <h2>  Problem 3 -  To stack or not to Stack </h2>
@@ -144,12 +144,12 @@ def  subplotSeries(series, format, fileName='subplot', seriesStart=0, seriesAmou
 
 <p> The output of the functions can be seen below: </p>
 
-<p align="left">
-	<img src="\figures\stackedSeriesPlot.png" alt="Stacked plot depicting the effects of anti-inflammatory medicine on 9 patients" width=500px>
-</p>
+
+<img src="./figures/stackedSeriesPlot.png" alt="Stacked plot depicting the effects of anti-inflammatory medicine on 9 patients" width=500px>
+
 
 <p align="right">
-	<img src="\figures\subplotSeriesPlot.png" alt="Plot with 9 subplots depicting the effects of anti-inflammatory medicine on each patient per respective plots." width=500px>
+	<img src="./figures/subplotSeriesPlot.png" alt="Plot with 9 subplots depicting the effects of anti-inflammatory medicine on each patient per respective plots.">
 </p>
 
 <p> The most obvious advantage in the stacked plot is the ease of analyzing and comprehending the general trend of the dataset with a simple eye-test. However, I assume this mostly rings true for sets with reasonably statistical similiarity. I think it would great for easily conveying a general trend, say, for a presentation (know your audience), but any direct comparison between the e.g. row 1 and 7 is almost impossible in this visual rendition, since the stacking inherently makes it hard to discern individual differences in datasets. </p>
