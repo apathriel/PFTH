@@ -144,11 +144,11 @@ def  subplotSeries(series, format, fileName='subplot', seriesStart=0, seriesAmou
 
 <p> The output of the functions can be seen below: </p>
 
+<p align="center"> 
+	<img src="./figures/stackedSeriesPlot.png" alt="Stacked plot depicting the effects of anti-inflammatory medicine on 9 patients" width=500px>
+</p>
 
-<img src="./figures/stackedSeriesPlot.png" alt="Stacked plot depicting the effects of anti-inflammatory medicine on 9 patients" width=500px>
-
-
-<p align="right">
+<p align="center">
 	<img src="./figures/subplotSeriesPlot.png" alt="Plot with 9 subplots depicting the effects of anti-inflammatory medicine on each patient per respective plots.">
 </p>
 
@@ -156,4 +156,5 @@ def  subplotSeries(series, format, fileName='subplot', seriesStart=0, seriesAmou
 
 <p> The subplots create an overview, enabling one to better grasp the the trajectories of the individual patients (datasets). Due to the differences in y-axis, it is fairly easy to identify patient index 7 as the max value, since the subplots by default have their axes adjusted accordingly, the range is somewhat easy to grasp. I find this method to be most advantageous for comparatively analyzing e.g. different solutions to a problem, whilst the stacked plot would be most advantageous for quickly converying the general trend of the datasets. </p>
 
+<p> Another disadvantage of the subplots is its medium. Since there's 9 distinct plots, it's harder to scale it down, while maintaining its readability, thus it is sub-optimal for small screen readers or a scientific journal with limited space. </p> 
 
