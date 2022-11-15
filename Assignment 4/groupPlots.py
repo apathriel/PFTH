@@ -15,7 +15,7 @@ def stackedSeriesPlot(series, format, fileName='stackedplot', seriesStart=0, ser
 
 def subplotSeries(series, format, fileName='subplot', seriesStart=0, seriesAmount=9):
     data = np.loadtxt(fname=f'data/{series}.{format}', delimiter=',')
-    fig = plt.figure(figsize=(10, 9.0), dpi=150)
+    fig = plt.figure(figsize=(10, 9.0))
     axes = []
 
     for i in range(seriesStart, seriesAmount):
