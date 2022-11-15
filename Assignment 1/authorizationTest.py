@@ -1,3 +1,5 @@
+import sys
+
 def userGreeting(password = 'defaultPassword'):
     """
     This function greets the user, and calls passwordCheck() to check for password match.
@@ -8,7 +10,7 @@ def userGreeting(password = 'defaultPassword'):
     print('Welcome back! Please enter your name.')
     userName = input()
     print(f'Thank you {userName}. Please enter your password.')
-    passwordCheck(input(), password)
+    passwordCheck(userPassword = input(), storedPassword = password)
 
 def passwordCheck(userPassword, storedPassword):
     """
@@ -19,6 +21,9 @@ def passwordCheck(userPassword, storedPassword):
 
     if userPassword == storedPassword:
         print('Login has been authorized')
+    elif userPassword == 'exit':
+        print('Login attempt has been canceled. Goodbye.')
+        sys.exit()
     else: 
         print('The password entered was incorrect. Please enter the correct password')
         passwordCheck(input(), storedPassword)

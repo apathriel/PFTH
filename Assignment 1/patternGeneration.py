@@ -1,20 +1,17 @@
 import sys, time
 
-patternString = '*'
-stringIncreasing = True
-
-def patternGen(delay, size):
+def patternGen(delay = 0.1, size = 10, iterationCount=5):
     """
     This function is used to generate a pattern.
 
-    Parameters: Delay controls the speed at which the pattern is printed. Size controls when the pattern will start decreasing.
+    Parameters: Delay controls the speed at which the pattern is printed. Size controls when the pattern will start decreasing. iterationCount defines 
     """
-    
-    global patternString
-    global stringIncreasing
-
+    patternString = '*'
+    stringIncreasing = True
+    iterationCounter = 0
+  
     try:
-        while True:
+        while iterationCounter < iterationCount:
             print(patternString)
             time.sleep(delay)
 
@@ -28,11 +25,14 @@ def patternGen(delay, size):
                 if len(patternString) == 1:
                     print(patternString)
                     stringIncreasing = not stringIncreasing 
-            
+                    iterationCounter += 1
+
     except KeyboardInterrupt:
         sys.exit()
 
-patternGen(0.2, 10)
+    print(f'The pattern has finished after {iterationCount} iterations!')
+
+patternGen(delay=0.2, size=10, iterationCount=3)
 
 # Used this to figure out how to slice last index of string https://geekflare.com/python-remove-last-character/
 # Largely followed the example from the Automating the Boring Stuff book. I include the try / except keywords to prevent an infinite loop.
