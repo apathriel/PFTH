@@ -49,7 +49,7 @@ title, xLabel and yLabel keyword arguments are empty strings by default, please 
 
 <h2> Problem 2 - Modify Figure Properties </h2>
 
-<p> In order to alter the figure properties whilst maintaining the functionality of the createPlottingFunction, I start by ensuring the properties can be altered through arguments in the eventual function call. Title, xlabel and ylabel are empty strings by default, since the function doesn't "need" these to execute. These properties are applied through the syntax below: </p>
+<p> In order to alter the figure properties whilst maintaining the functionality of the createPlottingFunction, I start by ensuring the properties can be altered through arguments in the eventual function call. Title, xlabel and ylabel are empty strings by default, since the function doesn't "need" these to execute. These properties are applied through the syntax below:</p>
 
 ````py 
 	plt.title(label = title, pad = mpl.rcParams['axes.titlepad']) 
