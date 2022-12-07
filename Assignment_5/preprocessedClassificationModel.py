@@ -1,9 +1,15 @@
+"""
+Title: Preprocessed vs. no additional preprocessing 
+Author: Gabriel Høst Andersen
+Date: 07/12/22
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import cross_val_score
 
@@ -47,11 +53,17 @@ def train_naive_bayes_model(dataset, data_format, sign1, sign2, stop_word_list=N
 
     # Uses the classifier model to do k-fold cross validation, cv is used to define it as 10 k-folds. 
     cv_accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
+    zero_rate_accuracy = 0.50
+    performance_difference = (cv_accuracies.mean() - zero_rate_accuracy)
+    performance_difference_percentage = (performance_difference / zero_rate_accuracy) * 100
 
     print(f'Relative Accuracy: {accuracy_score(y_test, y_pred)}')
     print(f'Accuracy in instances (True positives + True negatives): {accuracy_score(y_test, y_pred, normalize=False)}')
     print(f'Cross-validation mean score: {cv_accuracies.mean()}')
     print(f'Cross-validation standard deviation: {cv_accuracies.std()}')
+    print(f'Performance difference from zero rate: {"%.3f" % performance_difference}')
+    print(f'That correlates to a {"%.1f" % performance_difference_percentage}% relative change')
+
 
 
 def main():

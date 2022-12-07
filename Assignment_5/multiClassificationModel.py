@@ -1,3 +1,9 @@
+"""
+Title: Multi classification model
+Author: Gabriel Høst Andersen
+Date: 06/12/22
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -77,7 +83,7 @@ def train_naive_bayes_model(signs):
     print(f'Cross-validation mean score: {cv_accuracies.mean()}')
     print(f'Cross-validation standard deviation: {cv_accuracies.std()}') 
     print(f'Performance difference from zero rate: {"%.3f" % performance_difference}')
-    print(f'That correlates to a {"%.1f" % performance_difference_percentage}% change')
+    print(f'That correlates to a {"%.1f" % performance_difference_percentage}% relative change')
 
 def main():
     train_naive_bayes_model(signs=get_signs())

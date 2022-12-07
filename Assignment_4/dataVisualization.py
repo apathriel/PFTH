@@ -12,7 +12,7 @@ mpl.rcParams['axes.titlepad'] = 15
 
 def createPlottingFunction(series, format, fileName, colorMap='Blues', normScale='linear', title='', xLabel='', yLabel=''):
     """
-    This function will take a given series, with a given format, and after visualizing the data input in series, it will the visualization 
+    This function will take a given series, with a given format, and after visualizing the data input in series, it will save the visualization 
     as a PNG file with a given file name.
     Please check the following url for cmap documentation: https://matplotlib.org/stable/gallery/color/colormap_reference.html
     Please call mpl.scale.get_scale_names() to get availiable scale levels. 
