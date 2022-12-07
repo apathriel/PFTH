@@ -1,10 +1,16 @@
+"""
+    Title: Word importance (With or without function words)
+    Authors: Albin Sand, Gabriel Høst Andersen, Lissa Bui, Victor Rasmussen.
+    Date: 03/10/22
+"""
+
 import operator
 import numpy as np
 import pandas as pd
 from numpy import dot
 from numpy.linalg import norm
 
-df = pd.read_csv('horoscopes.csv')
+df = pd.read_csv('data/horoscopes.csv')
 
 horoscopeClean = df['horoscope-clean']
 

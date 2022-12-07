@@ -1,3 +1,9 @@
+"""
+Title: OOD- and OOP in Python 3
+Authors: Gabriel Høst Andersen & Lissa Bui
+Date: 08/11/22
+"""
+
 import datetime, time
 
 class Person:

@@ -1,4 +1,21 @@
+"""
+    Title: Pattern generation
+    Author: Gabriel Høst Andersen
+    Date: 13/09/22
+"""
+
 import sys, time
+
+def inputValidation():
+    try:
+        iterations = int(input('Please input the amount of pattern iterations: '))
+    except ValueError:
+        print('[ERROR] Please input a valid number.')
+        inputValidation()
+    except KeyboardInterrupt:
+        sys.exit()
+    else:
+        patternGen(delay=0.1, size=10, iterationCount=iterations)
 
 def patternGen(delay = 0.1, size = 10, iterationCount=5):
     """
@@ -32,7 +49,11 @@ def patternGen(delay = 0.1, size = 10, iterationCount=5):
 
     print(f'The pattern has finished after {iterationCount} iterations!')
 
-patternGen(delay=0.2, size=10, iterationCount=3)
+def main():
+    inputValidation()
+
+if __name__ == '__main__':
+    main()
 
 # Used this to figure out how to slice last index of string https://geekflare.com/python-remove-last-character/
 # Largely followed the example from the Automating the Boring Stuff book. I include the try / except keywords to prevent an infinite loop.

@@ -67,17 +67,17 @@ def train_naive_bayes_model(signs):
     
     zero_rate_accuracy = 0.084
     relative_accuracy = accuracy_score(y_test, y_pred)
-    performance_difference = (relative_accuracy - zero_rate_accuracy)
+    performance_difference = (cv_accuracies.mean() - zero_rate_accuracy)
     performance_difference_percentage = (performance_difference / zero_rate_accuracy) * 100
 
     print('The confusion matrix has been visualized and saved as confusion_matrix_multi in the figures folder.')
     print(f'Zero Rate accuracy: {zero_rate_accuracy}')
     print(f'Relative Accuracy: {"%.3f" % relative_accuracy}')
-    print(f'Performance difference from zero rate: {"%.3f" % performance_difference}')
-    print(f'That correlates to a {"%.1f" % performance_difference_percentage}% change')
     print(f'Accuracy in instances (True positives + True negatives): {accuracy_score(y_test, y_pred, normalize=False)}')
     print(f'Cross-validation mean score: {cv_accuracies.mean()}')
     print(f'Cross-validation standard deviation: {cv_accuracies.std()}') 
+    print(f'Performance difference from zero rate: {"%.3f" % performance_difference}')
+    print(f'That correlates to a {"%.1f" % performance_difference_percentage}% change')
 
 def main():
     train_naive_bayes_model(signs=get_signs())

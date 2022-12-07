@@ -1,3 +1,9 @@
+"""
+    Title: Custom plotting function
+    Author: Gabriel Høst Andersen
+    Date: 15/11/22
+"""
+
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
@@ -18,5 +24,10 @@ def createPlottingFunction(series, format, fileName, colorMap='Blues', normScale
     plt.ylabel(xLabel)
     plt.xlabel(yLabel)
     plt.savefig(f'figures/{fileName}.png') 
-    
-createPlottingFunction(series='series-01', format='csv', fileName='clinicalTrialDataset', colorMap='bone', normScale='linear', title='Effects of anti-inflammatory medicine', xLabel='Patients', yLabel='Time')
+    print(f'Figure has been saved to the figures folder as {fileName}.png')
+
+def main():    
+    createPlottingFunction(series='series-01', format='csv', fileName='clinicalTrialDataset', colorMap='bone', normScale='linear', title='Effects of anti-inflammatory medicine', xLabel='Patients', yLabel='Time')
+
+if __name__ == '__main__':
+    main()

@@ -1,9 +1,16 @@
-a = int(input('Input number: '))
+"""
+    Title: Sequence recognition + sequence generation
+    Author: Gabriel Høst Andersen
+    Date: 13/09/22
+"""
 
-def sequenceGenerator(number):
+def sequenceGenerator():
+
     """
     This function will generate a sequence of fibonacci numbers, length is determined by the parameter.
     """
+
+    number = int(input('Input number: '))
     
     fibString = ''
     a, b = 0, 1
@@ -14,7 +21,11 @@ def sequenceGenerator(number):
     fibString = fibString[:-1]
     return fibString
 
-print(sequenceGenerator(a))
+def main():
+    print(sequenceGenerator())
+
+if __name__ == '__main__':
+    main()
 
 # I was able to identify the sequence as the fibonacci sequence,
 # but i am bad at math and was unsure of how to begin.

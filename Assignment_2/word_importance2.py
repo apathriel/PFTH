@@ -1,10 +1,16 @@
+"""
+    Title: Word importance (sign-specific indexing)
+    Authors: Albin Sand, Gabriel Høst Andersen, Lissa Bui, Victor Rasmussen.
+    Date: 03/10/22
+"""
+
 import operator
 import numpy as np
 import pandas as pd
 from numpy import dot
 from numpy.linalg import norm
 
-df = pd.read_csv('horoscopes.csv')
+df = pd.read_csv('data/horoscopes.csv')
 
 specificSign = df['sign'] == 'cancer'
 horoscopeSpecific = df['horoscope-clean'].loc[specificSign].values
@@ -55,26 +61,24 @@ def intersection(lst1, lst2):
 def difference(lst1, lst2):
     return list(set(lst1).difference(set(lst2)))
 
-def main():
-    data = horoscopeSpecific
-    wc = word_count(' '.join(data))
-    print('[INFO] word counts with stopword filtering:')
-    print(wc)
-
 def differenceZodiac(sign1, sign2, sign3):
-    print('Words that occur in ' + sign1 + ' but not in ' + sign2)
+    print('Words that occur in ' + sign1 + ' but not in ' + sign2 + ':')
     print(difference(topWords(sign1), topWords(sign2)))
-    print('\nWords that occur in ' + sign2 + ' but not in ' + sign1)
+    print('\nWords that occur in ' + sign2 + ' but not in ' + sign1 + ':')
     print(difference(topWords(sign2), topWords(sign1)))
-    print('\nWords that occur in ' + sign2 + ' but not in ' + sign3)
+    print('\nWords that occur in ' + sign2 + ' but not in ' + sign3 + ':')
     print(difference(topWords(sign2), topWords(sign3)))
-    print('\nWords that occur in ' + sign1 + ' but not in ' + sign3)
+    print('\nWords that occur in ' + sign1 + ' but not in ' + sign3 + ':')
     print(difference(topWords(sign1), topWords(sign3)))
-    print('\nWords that occur in ' + sign3 + ' but not in ' + sign1)
+    print('\nWords that occur in ' + sign3 + ' but not in ' + sign1 + ':')
     print(difference(topWords(sign3), topWords(sign1)))
-    print('\nWords that occur in ' + sign3 + ' but not in ' + sign2)
+    print('\nWords that occur in ' + sign3 + ' but not in ' + sign2 + ':')
     print(difference(topWords(sign3), topWords(sign2)))
 
-if __name__=="__main__":
-#    main()
+def main():
     differenceZodiac('cancer', 'aries', 'capricorn')
+
+
+if __name__=="__main__":
+    main()
+   
