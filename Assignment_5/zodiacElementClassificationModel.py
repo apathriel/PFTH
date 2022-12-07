@@ -38,34 +38,27 @@ def train_naive_bayes_model(dataset, data_format):
     idxs_air_signs = df['sign'] == 'air'
     idxs_water_signs = df['sign'] == 'water'
     idxs_earth_signs = df['sign'] == 'earth'
-
     idxs_total = idxs_fire_signs + idxs_air_signs + idxs_water_signs + idxs_earth_signs
-    # uses loc syntax, which takes the argument of our idxs boolean array, in order to extract the data that matches the given signs.
+
     corpus = df['horoscope'].loc[idxs_total].values
     y = df['sign'].loc[idxs_total].values
 
-    # CountVectorizer is used to convert text to numerical data, it returns the input as a document-term matrix (numpy.ndarray here), tokenizes each word, and depicts frequency of every tokenized word for each horoscope. 
     vectorizer = CountVectorizer()
     X = vectorizer.fit_transform(corpus).toarray()
 
-    # Randomly splits the dataset in to training, which is used to train the model, while the test is used to test the algorithm (on data it hasn't been trained on). Used random_state to set a static seed, normalizing results for easier testing.
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, 
         test_size=.20,
         random_state=24
         )
 
-    # Instanties the model, and then trains it through the calling of the .fit method. Model will be trained to predict the y-label for given X-feature based on word count. Calculates the probability for each sign, and outputs the most likely sign.
     classifier = MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)
     classifier.fit(X_train , y_train)
 
-    # Uses the model which was instantiated and trained early to classify the y-label for each array (horoscope) in the test dataset.  
     y_pred = classifier.predict(X_test)
 
-    # Compares the results garnered from the model's classification, which was saved to y_pred, with the ground truth in y_test. Returns the True negatives, false positives, false negatives, and true positives in an array (since its a binary classification).
     cm = confusion_matrix(y_test, y_pred)
 
-    # Visualizing confusion matrix, changing cmap for readability. 
     vis = ConfusionMatrixDisplay(confusion_matrix=cm)
     vis.plot(cmap='inferno')
     plt.savefig('figures/confusion_matrix_element.png')

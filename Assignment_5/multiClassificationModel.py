@@ -42,7 +42,6 @@ def train_naive_bayes_model(signs):
         for sign in signs:
             idxs = df['sign'] == sign
             idxs_total += idxs.values
-    # Validate datatype as list, try by using list object method. Create empty numpy array with matching shape and dtype, use for loop to add each to idxs_total (boolean array with all true)
  
     corpus = df['horoscope'].loc[idxs_total].values
     y = df['sign'].loc[idxs_total].values
@@ -62,7 +61,7 @@ def train_naive_bayes_model(signs):
     y_pred = classifier.predict(X_test)
 
     cm = confusion_matrix(y_test, y_pred)
-    cm_labels = shorten_strings_in_list(signs, character=3) # shorten for label readability in visualization.
+    cm_labels = shorten_strings_in_list(signs, character=3) 
 
     vis = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=cm_labels)
     vis.plot(cmap='inferno')
