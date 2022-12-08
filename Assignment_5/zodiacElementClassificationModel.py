@@ -59,7 +59,7 @@ def train_naive_bayes_model(dataset, data_format):
 
     cm = confusion_matrix(y_test, y_pred)
 
-    vis = ConfusionMatrixDisplay(confusion_matrix=cm)
+    vis = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=classifier.classes_)
     vis.plot(cmap='inferno')
     plt.savefig('figures/confusion_matrix_element.png')
     plt.close()
