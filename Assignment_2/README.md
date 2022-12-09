@@ -33,8 +33,6 @@ Our first focus was to find a method that was able to retrieve a range from the 
 
 def  word_count(text, sort = True, stopword=False):
 
-#count words, with optional sorting and stopwords
-
 counter = {}
 
 for  word  in  tokenizer(text, stopword=stopword):
@@ -82,7 +80,7 @@ Then we used the accompanying intersection() and difference() functions to retri
 
 Thus we arrive at the question: ***What seems to be the most striking differences?***
 
-![Console output of Problem 1 is dispalyed](https://lh3.googleusercontent.com/fNBeRWBq5NORGifBSboYneOR39USl0vYOhLmAMUyMjHp0D8TnYh_IjjqewpAztDeW9M1lPo3e8-bZIXVrbTy6FKVgkGwJxKntneqUZaOaKpSY7cfZsx5WNXpPDWOM3jXB8JfMYnqjPJfv9KfTFILxr6ac8DyMbHgOOXnychaNa8hSuESBasrxvyK09cL1sSM6KZBlvTD_XFH4rbU5hZxkp6FMF3zY_nZLaByEa4NH66NCG_5rr1nCgWx4WJJXGkE8r-RBLUIoI0Su8xqAPBI7C4RdtQ2UOfPFCNDkuK0wrhNgCFmwk_Q1tC7cxYUCDN3DyzClXcr3PNaVdjCdeO8B9pIBe_8mobW1ConQ-Z9MHMMtXFF9mpagLbezE0jxFQmiKwp_mB2Ow5nimjyJnHt25Y7yI3MeLtwyhqY_ZBK-MsPezmRPmTENwau-ngZaY_C2qcynQO8fSDM90kmyQJbxaln0E1fRpJTI4rPwtgdutOSYQ7t0j3cnoEC20XDwgmXVpQ3tjCG7Bp-1QBR_osWyhF0ePLlENMNMYaKUG9zcIH8nabBO36qPArVz1ZtPUoq5ywmbE2w8M91pjl1xAn7gcCb-iPr_fhL-xP7_pe91jOEoOtWp0z7eXwax_vtT-kcW05umJ_00Xhh-WX2fMQFpgyO5DaQdZisTCkA8P2rdm2DU8DhkSKTv8lwYMihg99fQHgdqvByAKqYetC_6insdfUz5pzhzGNrEP9Nz90KJlguEzd2sREfElnqbtmiHv3xZIBVP9wyX8V3bzL_mcxZCM7hxdIsVEGbKztq0tl2hd36mI0LC4tIZJ3mSXDNytCdLItnziFYVpad-lHfX1Opbs0kLqrdwMxLl9sZbquiIo0Pf-wvJDSVrfZuBloSiahrG9lvDYcbMKRWZiptcnvsTDy9LzlccP_wCEzPCqGcOuvDGh64xN02ng8-pqGvecELwSpsZV0S03PZ3q14kTV2mYeX67be6nBip70ThBM2zRJAP7Y=w1475-h300-no?authuser=0)
+![Console output of Problem 1 is dispalyed](P1_IMG.PNG)
 
 I was initially surprised by the low frequency of intersection between the two lists, though this is largely a testament to the thoroughness of the stopwordList in stopwords() (and perhaps the predictability of the english language). 
 
@@ -107,7 +105,7 @@ horoscopeSpecific = df['horoscope-clean'].loc[specificZodiac].values
 
 We added the sign parameter, so we could easily pass multiple different signs as arguments. We also modified the for loop to iterate through the 200 most frequent words.
 
-![Results from comparing zodiac sign horoscopes](https://lh3.googleusercontent.com/vASi-MrJQfGAmldVwAb2nz0kYPgzAzMs-L45zpyyDAr32LuDY6BM5VZQu8XRpbN5hIhiVSXb59Yz09clRR8xL7DX1809en_OJ2ScVWYJFgDKKl9pQj6hu-m-36O4j8vExizsVoVEMeBnRtEupqczGBO351SWEkujNTBu5mv57EVDzSgXTq7k9xTyoAJi7DWgLnXQztT68u6MSFVHNLg56kDvkpZCTvtppCCMxvo8Yy-qkXmlrD1KmsIDLEugTFM7MJJPFW2GEg4-l1WqIclc-Em4Jb5umVyeWs8uAcc5JDSvZugZYygZfScF6WJOCHuBfUAdxS0vseRJf_XYzYZKKv5YPoYPVjATtCq8vR-kUasgXOIRXFYj7w-T4jT9w-OnqEP3h69ZUpbEnZJoD3FcQs_7gGQ5aewzkGppRFEhoFlwNW4xEBDahf8l9SDhs02ixrgDLj-sJuGN6QIoZNPReZ_OBPOfqabrLguaAndZNtfbaj5ljnePhdqyFRSxIkuHjGDki6zxdukIUwlJKv3WEwzUChBtYBA10yo937gSs2w-d-xOQTzLl3dX81Cp--L0V-EltwNBZZe9i-phpZe6V4JTpVpakLrrjBeCY65pSBIqpC_Ddrl6swTFKzQS09o2Afv6J7dTaDBaoePtDyFC_ldtNh9covn7mAVWnCuzHuxsxAREu246PhQ5v7QRncNixTFjfF4c59X_sTHeD_4MZnROJxYb_aXt4-e2DDX2Bkv2MGR9oRTqludglMlQrLzS4ZLBlgZxbA440utYVdlEWGqQW8rm684pdfAIieOpLJ0nm52Boy68yUDpYQ1Lmc20F9M9=w1486-h480-no?authuser=0)
+![Results from comparing zodiac sign horoscopes](P2_IMG.PNG)
 
 The question posed is: ***Are there any apparent characteristics/distinct differences between the signs?***
 
