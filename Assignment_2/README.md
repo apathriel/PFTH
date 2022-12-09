@@ -1,10 +1,27 @@
 # Assignment 2 - Word Importance
 
-By Gabriel Høst Andersen, PFTH, 2022.
+<p> <strong> By Gabriel Høst Andersen, PFTH, 2022. </strong> </p>
 
 Code was discussed with my group.
 
 Group members: Albin Sand, Gabriel Høst Andersen, Lissa Bui, Victor Rasmussen.
+
+<p> Word count (README excl. code blocks + scripts): 9150 </p>
+
+Any/all code blocks have primarily been included for readability. Please refer to the .py files for the full problem solutions.
+
+<h2> How to  execute </h2>
+
+<p> Ensure that the dependencies  are correctly installed. </p>
+
+```
+pip  install  -r  requirements.txt
+```
+<p>  Then execute the script (example for win below)
+
+````
+python ./word_importance.py
+````
   
 ## Problem 1: With or without function words
 

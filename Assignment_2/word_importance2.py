@@ -78,7 +78,6 @@ def differenceZodiac(sign1, sign2, sign3):
 def main():
     differenceZodiac('cancer', 'aries', 'capricorn')
 
-
 if __name__=="__main__":
     main()
    

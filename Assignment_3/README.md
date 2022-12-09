@@ -3,6 +3,19 @@
 <p> <strong> By Gabriel Høst Andersen, PFTH, 2022.</strong> </p>
 
 <p> The assignment was done in collaboration with my fellow study group member Lissa van Bui. </p>
+
+<p> Word count (README excl. code blocks + scripts): 11799 </p>
+
+<h2> How to execute </h2>
+
+<p> Ensure that python has been correctly installed. The scripts use modules included in a default python installation. </p>
+
+<p>  Then execute the script (example for win below) </p>
+
+```
+python ./class.py
+```
+
   
 ## Problem 1: Object-Oriented Design
 

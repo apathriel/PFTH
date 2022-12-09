@@ -4,17 +4,15 @@
     Date: 13/09/22
 """
 
-def sequenceGenerator():
+def sequenceGenerator(num):
 
     """
     This function will generate a sequence of fibonacci numbers, length is determined by the parameter.
     """
-
-    number = int(input('Input number: '))
     
     fibString = ''
     a, b = 0, 1
-    for _ in range(number):
+    for _ in range(num):
         fibString += str(a)
         fibString += '0'
         a, b = b, a + b
@@ -22,7 +20,8 @@ def sequenceGenerator():
     return fibString
 
 def main():
-    print(sequenceGenerator())
+    number = int(input('Input number: '))
+    print(sequenceGenerator(number))
 
 if __name__ == '__main__':
     main()

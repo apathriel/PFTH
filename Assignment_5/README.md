@@ -1,4 +1,4 @@
-<h1>  Assignment 3 - Horoscope Classification with scikit-learn </h1>
+<h1>  Assignment 5 - Horoscope Classification with scikit-learn </h1>
 
 <p> <strong> By Gabriel Høst Andersen, PFTH, 2022.</strong> </p>
 

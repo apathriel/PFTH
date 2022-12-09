@@ -1,6 +1,21 @@
 <h1>  Assignment 4 - Data Visualization </h1>
 
 <p> <strong> By Gabriel Høst Andersen, PFTH, 2022.</strong> </p>
+
+<p> Word count (README excl. code blocks + scripts): 9489 </p>
+
+<h2> How to  execute </h2>
+
+<p> Ensure that the dependencies  are correctly installed. </p>
+
+```
+pip  install  -r  requirements.txt
+```
+<p>  Then execute the script (example for win below)
+
+````
+python ./dataVisualization.py
+````
   
 <h2>  Problem 1 - Custom Plotting Function </h2>
 
