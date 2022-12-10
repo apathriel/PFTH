@@ -15,7 +15,7 @@ from sklearn.metrics import ConfusionMatrixDisplay
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import cross_val_score
 
-df = pd.read_csv('data/horoscopes.csv')
+df = pd.read_csv('../data/horoscopes.csv')
 
 def get_signs():
     return list(set(df['sign'].values))

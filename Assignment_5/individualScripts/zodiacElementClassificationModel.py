@@ -14,7 +14,7 @@ from sklearn.model_selection import cross_val_score
 
 # Create a function to edit csv file (only needs to be done once, not a non-destructive change)
 def zodiac_classification_csv_replace(dataset, data_format):
-    df = pd.read_csv(f'data/{dataset}.{data_format}')
+    df = pd.read_csv(f'../data/{dataset}.{data_format}')
 
     df['sign'] = df['sign'].replace({'aries': 'fire'})
     df['sign'] = df['sign'].replace({'sagittarius': 'fire'})
@@ -29,10 +29,10 @@ def zodiac_classification_csv_replace(dataset, data_format):
     df['sign'] = df['sign'].replace({'virgo': 'earth'})
     df['sign'] = df['sign'].replace({'capricorn': 'earth'})
 
-    df.to_csv(f'data/{dataset}.{data_format}', index=False)
+    df.to_csv(f'../data/{dataset}.{data_format}', index=False)
 
 def train_naive_bayes_model(dataset, data_format):
-    df = pd.read_csv(f'data/{dataset}.{data_format}') 
+    df = pd.read_csv(f'../data/{dataset}.{data_format}') 
 
     idxs_fire_signs = df['sign'] == 'fire'
     idxs_air_signs = df['sign'] == 'air'

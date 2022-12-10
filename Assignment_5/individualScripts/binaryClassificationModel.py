@@ -14,7 +14,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import cross_val_score
 
 def train_naive_bayes_model(dataset, data_format, sign1, sign2):
-    df = pd.read_csv(f'data/{dataset}.{data_format}') # No duplicates found under deduplication, thus omitted.
+    df = pd.read_csv(f'../data/{dataset}.{data_format}') # No duplicates found under deduplication, thus omitted.
 
     # idxs series is used to check whether the horoscope belongs to the given sign(s) as a bool, since its tabular data every horoscope has an associated sign.
     idxs_sign1 = df['sign'] == sign1

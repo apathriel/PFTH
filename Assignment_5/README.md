@@ -19,6 +19,8 @@ python ./binaryClassificationModel.py
 
 <h2>  Problem 1 - Binary classification </h2>
 
+<p> I've made a complete problem solution in modelClassification.py, whilst having a seperate script for each problem in the individualScripts directory. </p>
+
 <p> Please refer to binaryClassificationModel.py for the problem solution. Included code comments. I have also included the results  below for discussion/reflection purposes:
 
 ````
