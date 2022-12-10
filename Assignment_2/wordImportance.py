@@ -1,5 +1,5 @@
 """
-    Title: Word importance (sign-specific indexing)
+    Title: Word importance (With or without function words)
     Authors: Albin Sand, Gabriel Høst Andersen, Lissa Bui, Victor Rasmussen.
     Date: 03/10/22
 """
@@ -12,8 +12,7 @@ from numpy.linalg import norm
 
 df = pd.read_csv('data/horoscopes.csv')
 
-specificSign = df['sign'] == 'cancer'
-horoscopeSpecific = df['horoscope-clean'].loc[specificSign].values
+horoscopeClean = df['horoscope-clean']
 
 def stopwords():
     # list of stopwords for filtering out of strings.
@@ -33,7 +32,7 @@ def tokenizer(text, lower=True, stopword=True):
     
     return tokens
 
-def word_count(text, sort = True, stopword=True):
+def word_count(text, sort = True, stopword=False):
     #count words, with optional sorting and stopwords
     counter = {}
     for word in tokenizer(text, stopword=stopword):
@@ -45,7 +44,16 @@ def word_count(text, sort = True, stopword=True):
 
     return counter
 
-def topWords(sign):
+def topWords(useStopword = True):
+    horoscopeClean = df['horoscope-clean']
+    topWordList = []
+    wc = word_count(' '.join(horoscopeClean), sort = True, stopword = useStopword)
+    for i in range(0, 100):
+        topWord = list(wc.keys())[i]
+        topWordList.append(topWord)
+    return topWordList
+
+def topWordsSign(sign):
     specificZodiac = df['sign'] == sign
     horoscopeSpecific = df['horoscope-clean'].loc[specificZodiac].values
     topWordList = []
@@ -63,21 +71,28 @@ def difference(lst1, lst2):
 
 def differenceZodiac(sign1, sign2, sign3):
     print('Words that occur in ' + sign1 + ' but not in ' + sign2 + ':')
-    print(difference(topWords(sign1), topWords(sign2)))
+    print(difference(topWordsSign(sign1), topWordsSign(sign2)))
     print('\nWords that occur in ' + sign2 + ' but not in ' + sign1 + ':')
-    print(difference(topWords(sign2), topWords(sign1)))
+    print(difference(topWordsSign(sign2), topWordsSign(sign1)))
     print('\nWords that occur in ' + sign2 + ' but not in ' + sign3 + ':')
-    print(difference(topWords(sign2), topWords(sign3)))
+    print(difference(topWordsSign(sign2), topWordsSign(sign3)))
     print('\nWords that occur in ' + sign1 + ' but not in ' + sign3 + ':')
-    print(difference(topWords(sign1), topWords(sign3)))
+    print(difference(topWordsSign(sign1), topWordsSign(sign3)))
     print('\nWords that occur in ' + sign3 + ' but not in ' + sign1 + ':')
-    print(difference(topWords(sign3), topWords(sign1)))
+    print(difference(topWordsSign(sign3), topWordsSign(sign1)))
     print('\nWords that occur in ' + sign3 + ' but not in ' + sign2 + ':')
-    print(difference(topWords(sign3), topWords(sign2)))
+    print(difference(topWordsSign(sign3), topWordsSign(sign2)))
 
 def main():
+    print('Problem 1 - With or without function words')
+    print('The intersection between the lists consists of:')
+    print(intersection(topWords(), topWords(False)))
+    print('\nThe differences that occur in list with stopwords, and not in list without stopwords:')
+    print(difference(topWords(), topWords(False)))
+    print('\nThe differences that occur in list without stopwords, and not in list with stopwords')
+    print(difference(topWords(False), topWords()))
+    print('\nProblem 2 - Sign-specific indexing')
     differenceZodiac('cancer', 'aries', 'capricorn')
 
 if __name__=="__main__":
     main()
-   
