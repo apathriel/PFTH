@@ -2,7 +2,9 @@
 
 <p> <strong> By Gabriel Høst Andersen, PFTH, 2022.</strong> </p>
 
-<p> Word count (README excl. code blocks + scripts): 9489 </p>
+<p> Code was discussed with my group. </p>
+
+<p> Group members: Albin Sand, Gabriel Høst Andersen, Lissa Bui, Victor Rasmussen. </p>
 
 <h2> How to  execute </h2>
 

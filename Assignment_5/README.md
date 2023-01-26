@@ -2,8 +2,6 @@
 
 <p> <strong> By Gabriel Høst Andersen, PFTH, 2022.</strong> </p>
 
-Any/all code blocks have primarily been included for readability. Please refer to the .py files for the full problem solutions.
-
 <h2> How to  execute </h2>
 
 <p> Ensure that the dependencies  are correctly installed. </p>

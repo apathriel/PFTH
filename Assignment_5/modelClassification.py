@@ -32,7 +32,7 @@ def shorten_strings_in_list(list_to_shorten, character=3):
         print('Argument was not of appropriate data type (list)')
         return None # for clarification
 
-# Create a function to edit csv file (only needs to be done once, not a non-destructive change)
+# Create a function to edit csv file (only needs to be done once, not a non-destructive change, because of the to_csv method call)
 def zodiac_classification_csv_replace(dataset, data_format):
     df = pd.read_csv(f'data/{dataset}.{data_format}')
 
